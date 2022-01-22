@@ -23,7 +23,7 @@
                               <Insets top="200.0" />
                            </VBox.margin>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Beállítások">
+                        <Label alignment="CENTER" onMouseClicked="#loadSettingsScene" prefHeight="60.0" prefWidth="200.0" text="Beállítások">
                            <font>
                               <Font name="Agency FB" size="48.0" />
                            </font>
