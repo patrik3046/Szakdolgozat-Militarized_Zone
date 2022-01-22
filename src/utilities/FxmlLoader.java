@@ -1,4 +1,4 @@
-package Actions;
+package utilities;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
@@ -7,11 +7,11 @@ import java.net.URL;
 
 public class FxmlLoader {
 
-    private static Pane view;
+    private Pane view;
 
-    public static Pane getFxml(String fileName) {
+    public Pane getFxml(String fileName) {
         try {
-            URL fileUrl = FxmlLoader.class.getResource("/Scenes/" + fileName + ".fxml");
+            URL fileUrl = FxmlLoader.class.getResource("/scenes/" + fileName + ".fxml");
 
             System.out.println();
             if (fileUrl == null) {

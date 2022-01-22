@@ -1,6 +1,6 @@
-package Variables;
+package values.defaults;
 
-import Elements.Bomb;
+import elements.Bomb;
 
 public class DefaultBombs {
     private static final Bomb[] bombs = new Bomb[]{
