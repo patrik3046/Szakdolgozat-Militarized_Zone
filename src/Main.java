@@ -9,7 +9,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../scenes/MenuScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/scenes/RootScene.fxml"));
         primaryStage.setTitle("Militarized Zone");
         primaryStage.setScene(new Scene(root, 1280   , 720));
         primaryStage.setResizable(false);
