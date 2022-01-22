@@ -4,15 +4,29 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Slider;
 
-public class SettingsController {
+public class SettingsController extends MenuController {
 
     @FXML
     private ComboBox<String> languageComboBox;
 
     @FXML
     private ComboBox<String> mapSizeComboBox;
+
+    @FXML
+    private Slider gameVolumeSlider;
+
+    @FXML
+    private Slider musicVolumeSlider;
+
+    @FXML
+    private Slider obstructionsProbabilitySlider;
+
+    @FXML
+    private CheckBox costumeBombCheckBox;
 
     private ObservableList<String> languageList = FXCollections.observableArrayList("Magyar","Angol");
 
@@ -26,5 +40,7 @@ public class SettingsController {
         mapSizeComboBox.setValue("10x10");
         mapSizeComboBox.setItems(mapSizeList);
     }
+
+    public void saveSettings(){}
 }
 

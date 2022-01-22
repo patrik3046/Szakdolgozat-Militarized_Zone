@@ -1,11 +1,26 @@
 package controllers;
 
-public class MenuController{
+import javafx.fxml.FXML;
+import javafx.scene.layout.BorderPane;
+import utilities.FxmlLoader;
 
-    private FxmlController controller = new FxmlController();
+public class MenuController {
 
-    public void loadSettings(){
-        System.out.println("asdasdasd");
-        controller.loadSettingsScene();
+    @FXML
+    private BorderPane mainPane;
+
+    private FxmlLoader fxmlLoader = new FxmlLoader();
+
+    public void loadSettingsScene(){
+        this.mainPane.setCenter(null);
+        this.mainPane.setCenter(fxmlLoader.getFxml("SettingsScene"));
     }
+
+    public void loadMenuScene() {
+        this.mainPane.setLeft(null);
+        this.mainPane.setRight(null);
+        this.mainPane.setCenter(fxmlLoader.getFxml("MenuScene"));
+    }
+
+
 }

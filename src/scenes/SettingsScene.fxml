@@ -32,7 +32,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                              <Slider fx:id="gameVolumeSlider" prefHeight="100.0" prefWidth="200.0" value="50.0">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -55,7 +55,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                              <Slider fx:id="musicVolumeSlider" prefHeight="100.0" prefWidth="200.0" value="50.0">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -78,7 +78,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                              <Slider fx:id="obstructionsProbabilitySlider" prefHeight="100.0" prefWidth="200.0" value="50.0">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -101,7 +101,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <CheckBox alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="15.0">
+                              <CheckBox fx:id="costumeBombCheckBox" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="15.0">
                                  <HBox.margin>
                                     <Insets left="115.0" />
                                  </HBox.margin>
@@ -162,7 +162,7 @@
                         </HBox>
                         <HBox prefHeight="50.0" prefWidth="200.0">
                            <children>
-                              <Label alignment="BOTTOM_LEFT" prefHeight="20.0" text="Menü">
+                              <Label alignment="BOTTOM_LEFT" onMouseClicked="#loadMenuScene" prefHeight="20.0" text="Menü">
                                  <font>
                                     <Font name="Agency FB" size="24.0" />
                                  </font>
@@ -170,7 +170,7 @@
                                     <Insets bottom="10.0" left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label alignment="BOTTOM_LEFT" prefHeight="20.0" text="Mentés">
+                              <Label alignment="BOTTOM_LEFT" onMouseClicked="#saveSettings" prefHeight="20.0" text="Mentés">
                                  <font>
                                     <Font name="Agency FB" size="24.0" />
                                  </font>
