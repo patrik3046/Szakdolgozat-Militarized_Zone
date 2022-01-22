@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FxmlController">
+   <children>
+      <BorderPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0">
+         <left>
+            <AnchorPane prefHeight="720.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="720.0" prefWidth="640.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Játék hangereje">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Slider>
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Zene hangereje">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Slider>
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Szórás erőssége">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Slider>
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Egyedi bombák engedélyezése">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <CheckBox alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="15.0">
+                                 <HBox.margin>
+                                    <Insets left="115.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Pálya mérete">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <DropdownButton prefHeight="100.0" prefWidth="200.0">
+                                 <items>
+                                    <MenuItem text="10x10" />
+                                    <MenuItem text="12x12" />
+                                    <MenuItem text="15x15" />
+                                 </items>
+                                 <HBox.margin>
+                                    <Insets left="105.0" top="40.0" />
+                                 </HBox.margin>
+                              </DropdownButton>
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="400.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Nyelv kiválasztása">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <DropdownButton prefHeight="100.0" prefWidth="200.0">
+                                 <items>
+                                    <MenuItem text="Magyar" />
+                                    <MenuItem text="Angol" />
+                                 </items>
+                                 <HBox.margin>
+                                    <Insets left="105.0" top="40.0" />
+                                 </HBox.margin>
+                              </DropdownButton>
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="BOTTOM_LEFT" prefHeight="20.0" text="Menü">
+                                 <font>
+                                    <Font name="Agency FB" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="BOTTOM_LEFT" prefHeight="20.0" text="Mentés">
+                                 <font>
+                                    <Font name="Agency FB" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="720.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane gridLinesVisible="true" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="200.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="640.0" AnchorPane.bottomAnchor="150.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="100.0" prefWidth="370.0" text="Szórás erőssége">
+                           <font>
+                              <Font name="Agency FB Bold" size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Slider prefHeight="100.0" prefWidth="200.0" value="50.0" />
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="640.0" text="Egyedi bomba beállítása" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="Agency FB Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

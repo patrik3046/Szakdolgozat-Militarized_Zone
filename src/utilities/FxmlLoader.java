@@ -11,7 +11,7 @@ public class FxmlLoader {
 
     public Pane getFxml(String fileName) {
         try {
-            URL fileUrl = FxmlLoader.class.getResource("/scenes/" + fileName + ".fxml");
+            URL fileUrl = FxmlLoader.class.getResource("/Scenes/" + fileName + ".fxml");
 
             System.out.println();
             if (fileUrl == null) {
