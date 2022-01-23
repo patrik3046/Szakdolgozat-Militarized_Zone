@@ -7,6 +7,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
+import values.globals.GlobalSettings;
+
+import java.io.IOException;
 
 public class SettingsController extends MenuController {
 
@@ -32,15 +35,29 @@ public class SettingsController extends MenuController {
 
     private ObservableList<String> mapSizeList = FXCollections.observableArrayList("10x10","12x12","15x15");
 
+    private GlobalSettings globalSettings = new GlobalSettings();
+
     @FXML
     private void initialize(){
-        languageComboBox.setValue("Magyar");
+        gameVolumeSlider.setValue(globalSettings.getGameVolume());
+
+        musicVolumeSlider.setValue(globalSettings.getMusicVolume());
+
+        obstructionsProbabilitySlider.setValue(globalSettings.getObstructionsProbability());
+
+        costumeBombCheckBox.setSelected(globalSettings.getUsingCostumeBomb());
+
+        languageComboBox.setValue(globalSettings.getLanguage());
         languageComboBox.setItems(languageList);
 
-        mapSizeComboBox.setValue("10x10");
+        mapSizeComboBox.setValue(globalSettings.getMapSize());
         mapSizeComboBox.setItems(mapSizeList);
     }
 
-    public void saveSettings(){}
+    public void saveSettings() throws IOException {
+        globalSettings.setSettings(gameVolumeSlider.getValue(),musicVolumeSlider.getValue(),obstructionsProbabilitySlider.getValue(),costumeBombCheckBox.isSelected(),mapSizeComboBox.getValue(),languageComboBox.getValue());
+
+        loadMenuScene();
+    }
 }
 

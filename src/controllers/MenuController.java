@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import utilities.FxmlLoader;
@@ -22,5 +23,7 @@ public class MenuController {
         this.mainPane.setCenter(fxmlLoader.getFxml("MenuScene"));
     }
 
-
+    public void exitGame(){
+        Platform.exit();
+    }
 }
