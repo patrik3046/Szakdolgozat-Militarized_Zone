@@ -1,40 +1,90 @@
 package values.globals;
 
+import javafx.util.Pair;
+import utilities.SettingsFileReaderAndWriter;
+
+import java.io.IOException;
+import java.util.List;
+
 public class GlobalSettings {
-    private String language = "hun";
-    private double gameVolume = 0.5;
-    private double musicVolume = 0.5;
-    private Boolean usingCostumeBomb = false;
+
+    private List<Pair<String, String>> settings;
+
+    private SettingsFileReaderAndWriter settingsFileReaderAndWriter = new SettingsFileReaderAndWriter();
+
+    public String getMapSize() {
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("mapSize")) {
+                return setting.getValue();
+            }
+        }
+
+        return "";
+    }
+
+    public double getObstructionsProbability() {
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("obstructionsProbability")) {
+                return Double.parseDouble(setting.getValue());
+            }
+        }
+
+        return 0.5;
+    }
 
     public String getLanguage() {
-        return language;
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("language")) {
+                return setting.getValue();
+            }
+        }
+
+        return "";
     }
 
     public double getGameVolume() {
-        return gameVolume;
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("gameVolume")) {
+                return Double.parseDouble(setting.getValue());
+            }
+        }
+
+        return 0.5;
     }
 
     public double getMusicVolume() {
-        return musicVolume;
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("musicVolume")) {
+                return Double.parseDouble(setting.getValue());
+            }
+        }
+
+        return 0.5;
     }
 
     public Boolean getUsingCostumeBomb() {
-        return usingCostumeBomb;
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("usingCostumeBomb")) {
+                return Boolean.parseBoolean(setting.getValue());
+            }
+        }
+
+        return false;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public void setGameVolume(double gameVolume) {
-        this.gameVolume = gameVolume;
-    }
-
-    public void setMusicVolume(double musicVolume) {
-        this.musicVolume = musicVolume;
-    }
-
-    public void setUsingCostumeBomb(Boolean usingCostumeBomb) {
-        this.usingCostumeBomb = usingCostumeBomb;
+    public void setSettings(Double gameVolume, Double musicVolume, Double obstructionsProbability, Boolean usingCostumeBomb, String mapSize, String language) throws IOException {
+        settingsFileReaderAndWriter.setSettings(gameVolume,musicVolume,obstructionsProbability,usingCostumeBomb,mapSize,language);
     }
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FxmlController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsController">
    <children>
       <BorderPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0">
          <left>
@@ -33,7 +32,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                              <Slider fx:id="gameVolumeSlider" prefHeight="100.0" prefWidth="200.0" value="50.0">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -56,7 +55,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                              <Slider fx:id="musicVolumeSlider" prefHeight="100.0" prefWidth="200.0" value="50.0">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -79,7 +78,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Slider prefHeight="100.0" prefWidth="200.0" value="50.0">
+                              <Slider fx:id="obstructionsProbabilitySlider" prefHeight="100.0" prefWidth="200.0" value="50.0">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -102,7 +101,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <CheckBox alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="15.0">
+                              <CheckBox fx:id="costumeBombCheckBox" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="15.0">
                                  <HBox.margin>
                                     <Insets left="115.0" />
                                  </HBox.margin>
@@ -125,16 +124,11 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <DropdownButton prefHeight="100.0" prefWidth="200.0">
-                                 <items>
-                                    <MenuItem text="10x10" />
-                                    <MenuItem text="12x12" />
-                                    <MenuItem text="15x15" />
-                                 </items>
+                              <ComboBox fx:id="mapSizeComboBox" prefWidth="150.0">
                                  <HBox.margin>
-                                    <Insets left="105.0" top="40.0" />
+                                    <Insets left="50.0" top="30.0" />
                                  </HBox.margin>
-                              </DropdownButton>
+                              </ComboBox>
                            </children>
                            <padding>
                               <Insets left="50.0" />
@@ -153,15 +147,11 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <DropdownButton prefHeight="100.0" prefWidth="200.0">
-                                 <items>
-                                    <MenuItem text="Magyar" />
-                                    <MenuItem text="Angol" />
-                                 </items>
+                              <ComboBox fx:id="languageComboBox" prefWidth="150.0">
                                  <HBox.margin>
-                                    <Insets left="105.0" top="40.0" />
+                                    <Insets left="50.0" top="30.0" />
                                  </HBox.margin>
-                              </DropdownButton>
+                              </ComboBox>
                            </children>
                            <padding>
                               <Insets left="50.0" />
@@ -172,7 +162,7 @@
                         </HBox>
                         <HBox prefHeight="50.0" prefWidth="200.0">
                            <children>
-                              <Label alignment="BOTTOM_LEFT" prefHeight="20.0" text="Menü">
+                              <Label alignment="BOTTOM_LEFT" onMouseClicked="#loadMenuScene" prefHeight="20.0" text="Menü">
                                  <font>
                                     <Font name="Agency FB" size="24.0" />
                                  </font>
@@ -180,7 +170,7 @@
                                     <Insets bottom="10.0" left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label alignment="BOTTOM_LEFT" prefHeight="20.0" text="Mentés">
+                              <Label alignment="BOTTOM_LEFT" onMouseClicked="#saveSettings" prefHeight="20.0" text="Mentés">
                                  <font>
                                     <Font name="Agency FB" size="24.0" />
                                  </font>
@@ -196,7 +186,7 @@
             </AnchorPane>
          </left>
          <right>
-            <AnchorPane prefHeight="720.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+            <AnchorPane disable="true" prefHeight="720.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
                   <GridPane gridLinesVisible="true" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="200.0">
                      <columnConstraints>
