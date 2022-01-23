@@ -1,7 +1,9 @@
 package values.globals;
 
+import elements.Bomb;
 import javafx.util.Pair;
 import utilities.SettingsFileReaderAndWriter;
+import utilities.StringToBomb;
 
 import java.io.IOException;
 import java.util.List;
@@ -72,11 +74,11 @@ public class GlobalSettings {
         return 0.5;
     }
 
-    public Boolean getUsingCostumeBomb() {
+    public Boolean getUsingCustomBomb() {
         settings = settingsFileReaderAndWriter.getSettings();
 
         for (Pair<String, String> setting : settings) {
-            if (setting.getKey().equals("usingCostumeBomb")) {
+            if (setting.getKey().equals("usingCustomBomb")) {
                 return Boolean.parseBoolean(setting.getValue());
             }
         }
@@ -84,7 +86,20 @@ public class GlobalSettings {
         return false;
     }
 
-    public void setSettings(Double gameVolume, Double musicVolume, Double obstructionsProbability, Boolean usingCostumeBomb, String mapSize, String language) throws IOException {
-        settingsFileReaderAndWriter.setSettings(gameVolume,musicVolume,obstructionsProbability,usingCostumeBomb,mapSize,language);
+    public Bomb getCustomBomb() {
+        StringToBomb stringToBomb = new StringToBomb();
+        settings = settingsFileReaderAndWriter.getSettings();
+
+        for (Pair<String, String> setting : settings) {
+            if (setting.getKey().equals("bomb")) {
+                return stringToBomb.convertStringToBomb(setting.getValue());
+            }
+        }
+
+        return new Bomb(new int[][]{{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}, 0.5);
+    }
+
+    public void setSettings(Double gameVolume, Double musicVolume, Double obstructionsProbability, Boolean usingCustomBomb, String mapSize, String language, Bomb bomb) throws IOException {
+        settingsFileReaderAndWriter.setSettings(gameVolume, musicVolume, obstructionsProbability, usingCustomBomb, mapSize, language, bomb);
     }
 }

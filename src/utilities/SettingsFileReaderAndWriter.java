@@ -1,5 +1,6 @@
 package utilities;
 
+import elements.Bomb;
 import javafx.util.Pair;
 import values.globals.GlobalSettings;
 
@@ -27,9 +28,9 @@ public class SettingsFileReaderAndWriter {
         return settingsAsPairs;
     }
 
-    public void setSettings(Double gameVolume, Double musicVolume, Double obstructionsProbability, Boolean usingCostumeBomb, String mapSize, String language) throws IOException {
+    public void setSettings(Double gameVolume, Double musicVolume, Double obstructionsProbability, Boolean usingCostumeBomb, String mapSize, String language, Bomb bomb) throws IOException {
         FileWriter fileWriter = new FileWriter(GlobalSettings.class.getResource("settings.conf").getFile());
-        String settings = "language=" + language + ";gameVolume=" + gameVolume + ";musicVolume=" + musicVolume + ";usingCostumeBomb=" + usingCostumeBomb + ";mapSize=" + mapSize + ";obstructionsProbability=" + obstructionsProbability;
+        String settings = "language=" + language + ";gameVolume=" + gameVolume + ";musicVolume=" + musicVolume + ";usingCustomBomb=" + usingCostumeBomb + ";mapSize=" + mapSize + ";obstructionsProbability=" + obstructionsProbability + ";bomb=" + bomb.toString();
 
         fileWriter.write(settings);
 
